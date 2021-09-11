@@ -1,8 +1,8 @@
-GET http://localhost:5000
+GET http://localhost:5555
 
 ###
 
-POST http://localhost:5000/build
+POST http://localhost:5555/build
 Content-Type: application/json
 
 {
