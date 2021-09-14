@@ -1,0 +1,3 @@
+[submodule "site-chat-bot"]
+	path = site-chat-bot
+	url = https://github.com/shachar-langer/site-chat-bot

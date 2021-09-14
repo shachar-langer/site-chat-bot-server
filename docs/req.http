@@ -1,0 +1,12 @@
+GET http://localhost:5555
+
+###
+
+POST http://localhost:5555/build
+Content-Type: application/json
+
+{
+    "config": {
+        "a": "b"
+    }
+}
