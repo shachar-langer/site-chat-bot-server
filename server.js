@@ -46,7 +46,7 @@ app.post('/build', body('config').notEmpty(), async (req, res) => {
   // Build the bot (build the /site-chat-bot repository)
   // TODO - validate that the path exists
   const siteChatBotPath = path.resolve(__dirname, './site-chat-bot')
-  process.chdir('./site-chat-bot')
+  process.chdir(siteChatBotPath) //process.chdir('./site-chat-bot')
   await build({
     root: siteChatBotPath
   })
