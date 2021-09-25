@@ -9,7 +9,7 @@ const { body, validationResult } = require('express-validator')
 const app = express()
 const port = process.env.PORT || 5555
 
-app.use(cors())
+app.use(cors({ credentials: true, origin: true }))
 
 app.use(express.json())
 
