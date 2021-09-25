@@ -9,7 +9,14 @@ const { body, validationResult } = require('express-validator')
 const app = express()
 const port = process.env.PORT || 5555
 
-app.use(cors({ credentials: true, origin: true }))
+// app.use(cors({ credentials: true, origin: true }))
+
+corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
 
 app.use(express.json())
 
