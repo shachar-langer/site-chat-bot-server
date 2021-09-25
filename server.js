@@ -2,11 +2,14 @@ const fs = require('fs').promises
 const path = require('path')
 const { build } = require('vite')
 const express = require('express')
+const cors = require('cors')
 const AdmZip = require('adm-zip')
 const { body, validationResult } = require('express-validator')
 
 const app = express()
 const port = process.env.PORT || 5555
+
+app.use(cors())
 
 app.use(express.json())
 
