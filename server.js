@@ -11,12 +11,23 @@ const port = process.env.PORT || 5555
 
 // app.use(cors({ credentials: true, origin: true }))
 
-corsOptions = {
-  origin: 'http://localhost:3000',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
+// corsOptions = {
+//   origin: 'http://localhost:3000',
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
 
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
+
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Credentials', true)
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+  )
+  next()
+})
 
 app.use(express.json())
 
