@@ -35,7 +35,7 @@ app.post('/build', body('config').notEmpty(), async (req, res) => {
   try {
     // Inject the configuration to the site-bot repo
     await fs.writeFile(
-      './site-chat-bot/src/data/test_convo.json',
+      path.resolve(__dirname, './site-chat-bot/src/data/test_convo.json'),
       JSON.stringify(config)
     )
   } catch (e) {
